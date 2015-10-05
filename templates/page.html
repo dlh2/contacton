@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+	<link id="pagestyle" rel="stylesheet" type="text/css" href="http://www.w3schools.com/w3css/w3-theme-indigo.css">
+	<link rel="stylesheet" href="/base.css">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<title>{{ title }}</title>
+</head>
+<body class="w3-blue-grey">
+<div class="w3-card-16 w3-margin-12 w3-padding-xlarge w3-theme">
+	<header>
+		<h1>{{ title }}</h1>
+		<div class="subtitle">
+			{% if subtitle %}
+				{{ subtitle }}
+			{% endif %}
+		</div>
+	</header>
+	{{ body }}
+	<hr>
+	<footer>
+		{% for footer in config.footer %}<p class="unimportant" style="text-align:center;"><b>{{ footer }}</b></p>{% endfor %}
+	</footer>
+</div>
+</body>
+</html>

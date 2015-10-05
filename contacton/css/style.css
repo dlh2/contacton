@@ -1,0 +1,44 @@
+#banner
+{
+	height:28%;
+	width:100%;
+}
+#contenedor
+{
+	height:62%;
+	width:100%;
+	overflow:auto;
+}
+#footer
+{
+	height:10%;
+	width:100%;
+	background-color:#84c1a3;
+	vertical-align:middle;
+}
+#creditos
+{
+	padding-top:2%;
+}
+#banner img
+{
+	height:100%;
+	width:100%;
+}
+#video
+{
+	text-align:center;
+	height:60%;
+	width:100%;
+}
+#video img
+{
+	padding-top:1em;
+	height:100%;
+	width:30%;
+}
+#opciones
+{
+	padding-top:1em;
+	text-align:center;
+}
