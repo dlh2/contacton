@@ -1,0 +1,28 @@
+		<h3>Formulario de registro de Empresas:</h3>
+		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
+		<div class="col-xs-6">
+			<label for="nombre">Nombre de la Empresa:</label><input type="text" name="nombre" class="form-control" id="nombre" placeholder="ejemplo:burguer and chicken"/>
+		</div>	
+		<div class="col-xs-6">
+			<label for="direccion">Direccion de la Empresa:</label><input type="text" name="direccion" class="form-control" id="direccion" placeholder="calle 23 primero derecha"/>
+		</div>	
+		<div class="col-xs-6">
+			<label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja una contraseña"/>
+		</div>	
+		<div class="col-xs-6">
+			<label for="pass2">Repetir Password: </label><input id="pass2" type="password" name="pass2" class="form-control" placeholder="Vuelve a introducir tu contraseña"/>
+		</div>	
+		<div class="col-xs-6">
+			<label for="correo">Correo electrónico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com"/>
+		</div><br/><br/>
+		<div class="checkbox">
+			<label><input type="checkbox" name="politica" id="politica" value="yes">Pulse para aceptar las <a href="#">politicas de uso</a>.</label>
+		</div>	
+		<button type="submit" class="btn btn-default" onclick="envio('registroe.php');">Enviar</button><br/><br/>
+		</form>
+		<div class="btn-group btn-group-sm">
+			<button type="button" class="btn btn-primary" onclick="envio('empleado.php');">Registrarse como Usuario</button>
+			<button type="button" class="btn btn-primary" onclick="envio('empresa.php');">Registrarse como Empresa</button>
+		</div>
+		<br/><br/>
+		<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('login.php');">Entrar(login)</button>
