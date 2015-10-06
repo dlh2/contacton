@@ -1,74 +1,128 @@
+<?php session_start(); ?>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Una red social de empresarios y trabajadores, con ganas de trabajar.">
-		<link rel="shortcut icon" href="favicon.ico">
-		<title>Contact On - Contactando por ti.</title>
-		<meta content="trabajo, empresas, curriculums, emprendedores, autonomo" name="keywords" />
-		<link rel="stylesheet" href="/base.css">
-	</head>
-	<body>
-		<?php
-		$servername = "mysql.nixiweb.com";
-		$username = "u770401726_dbco";
-		$password = "LWWYUwhbX8";
-		$dbname = "u770401726_dbco";
-
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
+<head>
+<title>Inicio ContactON</title>
+<meta charset="utf-8"/> 
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="shortcut icon" href="img/favicon.ico"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script type="text/javascript">
+var idUsuario=<?php if(isset($_SESSION['id'])){echo 1;}else{echo 0;}?>;
+function envio(link)
+{
+	var conexion;
+	//opciones de compatibilidad
+	if(window.XMLHttpRequest)
+	{
+		conexion=new XMLHttpRequest();
+	}
+	else
+	{
+		conexion=new ActiveXObject('Microsoft.XMLHTTP');
+	}
+	//envio y recibo de informacion
+	conexion.onreadystatechange=function()
+	{
+		if (conexion.readyState==4 && conexion.status==200)
+		{
+		var d = document.getElementById("contenedor");
+		while (d.hasChildNodes())
+		{
+			d.removeChild(d.firstChild);
 		}
-
-		?>
-		<style>
-		#menu{
-			height:85px;
+		document.getElementById("contenedor").innerHTML=conexion.responseText;
 		}
-		#side_menu{
-		width:200px;
+	}
+	if(link == "loginacceso.php")
+	{
+		var correo = document.getElementById("correo").value;
+		var pass = document.getElementById("pass").value;
+		parametros="?correo="+correo+"&pass="+pass;
+	}
+	else if(link == "registroe.php")
+	{
+		var nombre = document.getElementById("nombre").value;
+		var direccion = document.getElementById("direccion").value;
+		var pass = document.getElementById("pass").value;
+		var pass2 = document.getElementById("pass2").value;
+		var correo = document.getElementById("correo").value;
+		if(document.getElementById("politica").checked)
+		{
+			var politica = document.getElementById("politica").value;
 		}
-		</style>
-		<div id="menu" class="w3-topnav w3-small w3-black">
-			<a href="#"> <img src="/IMG/banner.png"></a>
-			<a href="#"> Search </a>
-			<a href="#"> Perfil </a>
-			<a href="#"> Mas opciones </a>
-		</div>
-		 <div class="w3-row">
-			<div id="side_menu" class="w3-col w3-red">
-				<center>
-				 <img src="http://thedirt.co/images/icons/user_profile_placeholder.png" class="w3-circle" style="width:150px"> 
-				</center>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		else
+		{
+			var politica="no";
+		}
+		parametros="?correo="+correo+"&pass="+pass+"&pass2="+pass2+"&nombre="+nombre+"&direccion="+direccion+"&politica="+politica;
+	}
+	else if(link == "registrou.php")
+	{
+		var nombre = document.getElementById("nombre").value;
+		var apellido = document.getElementById("apellido").value;
+		var pass = document.getElementById("pass").value;
+		var pass2 = document.getElementById("pass2").value;
+		var correo = document.getElementById("correo").value;
+		if(document.getElementById("politica").checked)
+		{
+			var politica = document.getElementById("politica").value;
+		}
+		else
+		{
+			var politica="no";
+		}
+		parametros="?correo="+correo+"&pass="+pass+"&pass2="+pass2+"&nombre="+nombre+"&apellido="+apellido+"&politica="+politica;	
+	}
+	else
+	{
+		parametros="";
+	}
+	if(link == "registrou.php" || link == "registroe.php" || link == "loginacceso.php")
+	{
+		document.getElementById("contenedor").innerHTML=' <br/><div class="progress" style="text-align:center;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:100%">Cargando....Por favor espere</div></div>';
+	}
+	conexion.open("GET",link+parametros,true);
+	conexion.send();
+};
+function carga(){
+	if(idUsuario > 0)
+	{
+		window.location ="tablon.php";
+	}
+}
+</script>
+</head>
+    <body onLoad="setInterval('carga()',500);">
+<div class="container-fluid" style="padding-left:0;padding-right:0;">
+	<div class="col-sm-12" style="padding-left:0;padding-right:0;">
+		 <a href="/"><img class="img-responsive" src="img/banner.png" alt="Chania"/></a> 
+	</div>
+		
+	<div class="col-sm-12">
+		<div id="contenedor">
+			<div id="video" align="center">
+				<br/><br/><img class="img-responsive" src="img/video.jpg" alt="video"/><br/>
 			</div>
-			<div class="w3-rest w3-blue">
-			<?php
-
-			$sql = "SELECT id, estado FROM estados WHERE id_user='1' and visto=0";
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					echo "id: " . $row["id"]. " - Name: " . $row["estado"]. "<br>";
-				}
-			} else {
-				echo "0 results";
-			}
-			$conn->close();
-			?>
+			
+			<div id="opciones">
+				<div class="btn-group btn-group-sm">
+					<button type="button" class="btn btn-primary" onclick="envio('empleado.php');">Registrarse como Usuario</button>
+					<button type="button" class="btn btn-primary" onclick="envio('empresa.php');">Registrarse como Empresa</button>
+				</div><br/><br/>
+				<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('login.php');">Entrar(login)</button>
 			</div>
 		</div>
-	</body>
+	</div>
+	
+	<div id="footer">
+		<div id="creditos" align="center"><br/>Copyright 2015 ContactON</div>
+	</div>
+</div>
+</body>
 </html>
