@@ -41,10 +41,10 @@ if($contador > 0){
 echo '<h3>Entrar en mi Perfil:</h3>
 		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
 		<div class="col-xs-12" style="text-align:center;">
-			<label for="correo">Correo electrónico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
+			<label for="correo">Correo electrónico: </label><input  onkeypress = "pulsar(event,"loginacceso.php");" class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
 		</div>
 		<div class="col-xs-12">
-			<label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja una contraseña" value='."'$pass'".'/>
+			<label for="pass">Password:</label><input type="password" name="pass" onkeypress = "pulsar(event,"loginacceso.php");" class="form-control input-lg" id="pass" placeholder="Escoja una contraseña" value='."'$pass'".'/>
 		</div>
 		<div class="col-sm-12">		
 		<div class="checkbox">

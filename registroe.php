@@ -99,19 +99,19 @@ if($contador > 0)
 		echo '<h3>Formulario de registro de Empresas:</h3>
 		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
 		<div class="col-xs-6">
-			<label for="nombre">Nombre de la Empresa:</label><input type="text" name="nombre" class="form-control" id="nombre" placeholder="ejemplo:burguer and chicken" value='."'$nombre'".'/>
+			<label for="nombre">Nombre de la Empresa:</label><input type="text" onkeypress = "pulsar(event,"registroe.php");" name="nombre" class="form-control input-lg" id="nombre" placeholder="ejemplo:burguer and chicken" value='."'$nombre'".'/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="direccion">Direccion de la Empresa:</label><input type="text" name="direccion" class="form-control" id="direccion" placeholder="calle 23 primero derecha" value='."'$direccion'".'/>
+			<label for="direccion">Direccion de la Empresa:</label><input onkeypress = "pulsar(event,"registroe.php");" type="text" name="direccion" class="form-control input-lg" id="direccion" placeholder="calle 23 primero derecha" value='."'$direccion'".'/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja un Password" value='."'$pass'".'/>
+			<label for="pass">Password:</label><input type="password" onkeypress = "pulsar(event,"registroe.php");" name="pass" class="form-control input-lg" id="pass" placeholder="Escoja un Password" value='."'$pass'".'/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="pass2">Repetir Password: </label><input id="pass2" type="password" name="pass2" class="form-control" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/>
+			<label for="pass2">Repetir Password: </label><input id="pass2" onkeypress = "pulsar(event,"registroe.php");" type="password" name="pass2" class="form-control input-lg" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="correo">Correo electronico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
+			<label for="correo">Correo electronico: </label><input onkeypress = "pulsar(event,"registroe.php");"  class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
 		</div><br/><br/>
 		<div class="checkbox">
 			<label for="politica"><input type="checkbox" name="politica" id="politica" value="yes" '.$check.'>Pulse para aceptar las <a href="#">politicas de uso</a>.</label>

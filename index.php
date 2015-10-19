@@ -12,11 +12,8 @@ if(isset($_SESSION['id']))
 <head>
 <title>Inicio ContactON</title>
 <meta charset="utf-8"/> 
- <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="shortcut icon" href="img/favicon.ico"/>
@@ -105,6 +102,16 @@ function carga(){
 		window.location ="tablon.php";
 	}
 };
+function pulsar(e,ruta)
+{
+	if(e.which == 13)
+	{
+		if(ruta != undefined)
+		{
+			envio(ruta);
+		}
+	}
+}
 </script>
 </head>
 <body onLoad="setInterval('carga()',1000);>

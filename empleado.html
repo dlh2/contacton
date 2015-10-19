@@ -1,19 +1,19 @@
 		<h3>Formulario de registro de Usuario:</h3>
 		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
 		<div class="col-xs-6">
-			<label for="nombre">Nombre:</label><input type="text" name="nombre" class="form-control" id="nombre" placeholder="ejemplo:Juan Sanchez"/>
+			<label for="nombre">Nombre:</label><input type="text" name="nombre" onkeypress = "pulsar(event,'registrou.php');" class="form-control input-lg" id="nombre" placeholder="ejemplo:Juan Sanchez"/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="apellido">Apellidos:</label><input type="text" name="apellido" class="form-control" id="apellido" placeholder="ejemplo:martinez sevilla"/>
+			<label for="apellido">Apellidos:</label><input type="text" name="apellido" onkeypress = "pulsar(event,'registrou.php');" class="form-control input-lg" id="apellido" placeholder="ejemplo:martinez sevilla"/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja un Password"/>
+			<label for="pass">Password:</label><input type="password" onkeypress = "pulsar(event,'registrou.php');" name="pass" class="form-control input-lg" id="pass" placeholder="Escoja un Password"/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="pass2">Repetir Password: </label><input id="pass2" type="password" name="pass2" class="form-control" placeholder="Vuelve a introducir tu Password"/>
+			<label for="pass2">Repetir Password: </label><input onkeypress = "pulsar(event,'registrou.php');" id="pass2" type="password" name="pass2" class="form-control input-lg" placeholder="Vuelve a introducir tu Password"/>
 		</div>	
 		<div class="col-xs-6">
-			<label for="correo">Correo electrónico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com"/>
+			<label for="correo">Correo electrónico: </label><input  onkeypress = "pulsar(event,'registrou.php');" class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com"/>
 		</div><br/><br/><br/><br/><br/>
 			<div class="checkbox">
 				<label><input type="checkbox" name="politica" id="politica" value="yes">Pulse para aceptar las <a href="#">politicas de uso</a>.</label>
