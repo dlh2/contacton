@@ -1,5 +1,14 @@
-<?php session_start(); ?>
-<html>
+<?php session_start(); 
+if(isset($_SESSION['id']))
+{
+	if($_SESSION['id'] > 0)
+	{
+		header('Location: ./tablon.php');
+	}
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <title>Inicio ContactON</title>
 <meta charset="utf-8"/> 
@@ -95,10 +104,10 @@ function carga(){
 	{
 		window.location ="tablon.php";
 	}
-}
+};
 </script>
 </head>
-    <body onLoad="setInterval('carga()',500);">
+<body onLoad="setInterval('carga()',1000);>
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
 	<div class="col-sm-12" style="padding-left:0;padding-right:0;">
 		 <a href="/"><img class="img-responsive" src="img/banner.png" alt="Chania"/></a> 
@@ -106,23 +115,30 @@ function carga(){
 		
 	<div class="col-sm-12">
 		<div id="contenedor">
-			<div id="video" align="center">
-				<br/><br/><img class="img-responsive" src="img/video.jpg" alt="video"/><br/>
+			<div class="col-sm-4">
 			</div>
-			
-			<div id="opciones">
+			<div class="col-sm-4">
+				<br/>
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Cx0lva2Ju2I" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<br/><br/>
+				<div id="opciones">
 				<div class="btn-group btn-group-sm">
 					<button type="button" class="btn btn-primary" onclick="envio('empleado.php');">Registrarse como Usuario</button>
 					<button type="button" class="btn btn-primary" onclick="envio('empresa.php');">Registrarse como Empresa</button>
 				</div><br/><br/>
 				<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('login.php');">Entrar(login)</button>
 			</div>
+			</div>
 		</div>
 	</div>
-	
-	<div id="footer">
-		<div id="creditos" align="center"><br/>Copyright 2015 ContactON</div>
+	<div class="col-sm-4">
+			</div>
+	<div class="col-sm-12">
+		<div id="footer" style="padding-top:0;>
+			<div id="creditos" align="center"><br/>Copyright 2015 ContactON</div>
+		</div>
 	</div>
-</div>
 </body>
 </html>

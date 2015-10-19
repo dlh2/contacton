@@ -38,7 +38,7 @@ if($contador > 0)
 	echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.$errores."</div>";
 }
 if($contador > 0){
-echo '<h3>Formulario de registro de Empresas:</h3>
+echo '<h3>Entrar en mi Perfil:</h3>
 		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
 		<div class="col-xs-12" style="text-align:center;">
 			<label for="correo">Correo electrónico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
@@ -61,4 +61,5 @@ echo '<h3>Formulario de registro de Empresas:</h3>
 		<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'login.php'".');">Entrar(login)</button>';
 		}
 	mysqli_close($conexion);
+	sleep(2);
 ?>

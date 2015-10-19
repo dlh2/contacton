@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf8");
 $correo = $_GET["correo"];
 $pass = $_GET["pass"];
 $pass2 = $_GET["pass2"];
@@ -18,13 +19,13 @@ if(strlen($correo) == 0)
 }
 if(strlen($pass) == 0)
 {
-	$errores = $errores."No has puesto la contraseña.<br/>";
+	$errores = $errores."No has puesto la Password.<br/>";
 	$contador++;
 	$pass="";
 }
 if(strlen($pass2) == 0)
 {
-	$errores = $errores."No has repetido la contraseña.<br/>";
+	$errores = $errores."No has repetido la Password.<br/>";
 	$contador++;
 	$pass2="";
 }
@@ -52,7 +53,7 @@ if(strlen($apellido) == 0)
 }
 if(!strcmp ($pass , $pass2 ) == 0)
 {
-	$errores = $errores."La contraseña no coincide.<br/>";
+	$errores = $errores."El Password no coincide.<br/>";
 	$contador++;
 }
 if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
@@ -80,7 +81,12 @@ if($contador < 1)
 			$_SESSION["id"]=$fila[0];
 			$_SESSION["tipo"]=$tipo;
 			echo "Se ha registrado correctamente.";
-			echo'<ul class="pager"><li><a href="tablon.php">Ir a mi Tablon</a></li></ul><script>idUsuario=1;</script>'; 
+			echo'<ul class="pager"><li><a href="tablon.php">Ir a mi Tablon</a></li></ul>';
+			$sql2 ="SELECT id FROM usuarios where correo = '".$correo."'";
+			$resultado3 = $conexion->query($sql2);
+			$fila2=mysqli_fetch_row($resultado3);
+			$sql3 = "INSERT INTO actividades (id_user,id_desti,fecha,id_tipo_actividad,actividad) VALUES ('".$fila2[0]."','".$fila2[0]."','".date("Y/m/d")."','20','Bienvenido y Gracias por utilizar ContactON')";	
+			$conexion->query($sql3);
 		}
 	}	
 }
@@ -90,7 +96,8 @@ if($contador > 0)
 }
 if($contador > 0)
 	{
-	echo '<h3>Formulario de registro de Usuario:</h3> <form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain"> <div class="col-xs-6"><label for="nombre">Nombre:</label><input type="text" name="nombre" class="form-control" id="nombre" placeholder="ejemplo:Juan Sanchez" value='."'$nombre'".'/></div>	<div class="col-xs-6"><label for="apellido">Apellidos:</label><input type="text" name="apellido" class="form-control" id="apellido" placeholder="Ejemplo:martinez sevilla" value='."'$apellido'".'/></div><div class="col-xs-6"><label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja una Password" value='."'$pass'".'/></div><div class="col-xs-6"><label for="pass2">Repetir Password: </label><input id="pass2" type="password" name="pass2" class="form-control" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/></div>	<div class="col-xs-6"><label for="correo">Correo electrónico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/></div><br/><br/><br/><br/><br/><div class="checkbox"><label><input type="checkbox" name="politica" id="politica" value="yes" '.$check.'>Pulse para aceptar las <a href="#">politicas de uso</a>.</label></div><button type="submit" class="btn btn-default" onclick="envio('."'registrou.php'".');">Enviar</button><br/><br/></form><div class="btn-group btn-group-sm"><button type="button" class="btn btn-primary" onclick="envio('."'empleado.php'".');">Registrarse como Usuario</button><button type="button" class="btn btn-primary" onclick="envio('."'empresa.php'".');">Registrarse como Empresa</button></div><br/><br/><button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'login.php'".');">Entrar(login)</button>';
+	echo '<h3>Formulario de registro de Usuario:</h3> <form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain"> <div class="col-xs-6"><label for="nombre">Nombre:</label><input type="text" name="nombre" class="form-control" id="nombre" placeholder="ejemplo:Juan Sanchez" value='."'$nombre'".'/></div><div class="col-xs-6"><label for="apellido">Apellidos:</label><input type="text" name="apellido" class="form-control" id="apellido" placeholder="Ejemplo:martinez sevilla" value='."'$apellido'".'/></div><div class="col-xs-6"><label for="pass">Password:</label><input type="password" name="pass" class="form-control" id="pass" placeholder="Escoja una Password" value='."'$pass'".'/></div><div class="col-xs-6"><label for="pass2">Repetir Password: </label><input id="pass2" type="password" name="pass2" class="form-control" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/></div><div class="col-xs-6"><label for="correo">Correo electronico: </label><input  class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/></div><br/><br/><br/><br/><br/><div class="checkbox"><label for="politica"><input type="checkbox" name="politica" id="politica" value="yes" '.$check.'>Pulse para aceptar las <a href="#">politicas de uso</a>.</label></div><button type="button" class="btn btn-default" onclick="envio('."'registrou.php'".');">Enviar</button><br/><br/></form><div class="btn-group btn-group-sm"><button type="button" class="btn btn-primary" onclick="envio('."'empleado.php'".');">Registrarse como Usuario</button><button type="button" class="btn btn-primary" onclick="envio('."'empresa.php'".');">Registrarse como Empresa</button></div><br/><br/><button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'login.php'".');">Entrar(login)</button>';
 	}
 	mysqli_close($conexion);
+	sleep(4);
 ?>
