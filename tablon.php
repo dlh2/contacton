@@ -76,8 +76,8 @@ if(!isset($_SESSION['id']))
 		if(document.getElementById('pandes'))
 		{
 			document.getElementById('pandes').innerHTML = "Panel";
-		}
-		document.getElementById('activi').innerHTML = "";
+			document.getElementById('activi').innerHTML = "";
+		}	
 	}
 	if(typeof(c) === "undefined")
 	{
@@ -166,7 +166,7 @@ function pulsar(e,ab,bb,cb)
 {
 	if(e.which == 13)
 	{
-		if(ruta != undefined)
+		if(ab == 'tareas.php?tipo=8')
 		{
 			tareas(ab,bb,cb);
 		}
