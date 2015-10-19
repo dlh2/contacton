@@ -93,7 +93,7 @@ if(isset($_GET['fase']))
 			$conexion->query($sql3);
 			$conexion->query($sql2);
 			$conexion->query($sql1);
-			echo "Enviado Correctamente";
+			echo "<div align='center'>Enviado Correctamente <a href='tablon.php'> Volver al inicio</a></div>";
 		}
 		else
 		{

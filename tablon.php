@@ -77,7 +77,11 @@ if(!isset($_SESSION['id']))
 		{
 			document.getElementById('pandes').innerHTML = "Panel";
 			document.getElementById('activi').innerHTML = "";
-		}	
+		}
+		else
+		{
+			b='cp';
+		}			
 	}
 	if(typeof(c) === "undefined")
 	{
@@ -97,8 +101,16 @@ if(!isset($_SESSION['id']))
 	{
 		if (conexion.readyState==4 && conexion.status==200)
 		{
-		document.getElementById(b).innerHTML="";
-		document.getElementById(b).innerHTML=conexion.responseText;
+			if(document.getElementById(b))
+			{
+				document.getElementById(b).innerHTML="";
+				document.getElementById(b).innerHTML=conexion.responseText;
+			}
+			else
+			{
+				document.getElementById('cp').innerHTML="";
+				document.getElementById('cp').innerHTML=conexion.responseText;
+			}
 		}
 	}
 	if(a == 'tareas.php?tipo=8')
@@ -133,7 +145,14 @@ if(!isset($_SESSION['id']))
 	{
 		parametros="";
 	}
-	document.getElementById(b).innerHTML=' <br/><div class="progress" style="width:100%;text-align:center;margin:0 0 0 0;padding:0 0 0 0;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="50" style="width:100%;background-color:gray;">'+mensajeload+'</div></div>';
+	if(document.getElementById(b))
+	{	
+		document.getElementById(b).innerHTML=' <br/><div class="progress" style="width:100%;text-align:center;margin:0 0 0 0;padding:0 0 0 0;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="50" style="width:100%;background-color:gray;">'+mensajeload+'</div></div>';
+	}
+	else
+	{
+		document.getElementById('cp').innerHTML=' <br/><div class="progress" style="width:100%;text-align:center;margin:0 0 0 0;padding:0 0 0 0;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="50" style="width:100%;background-color:gray;">'+mensajeload+'</div></div>';
+	}
 	if(a == 'mod_perfil_submit.php'){
 		var conexion_i;
 		if(window.XMLHttpRequest)
