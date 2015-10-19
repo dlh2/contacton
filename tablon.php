@@ -73,7 +73,10 @@ if(!isset($_SESSION['id']))
 	mensajeload=c;
 	if(b == "pan")
 	{
-		document.getElementById('pandes').innerHTML = "Panel";
+		if(document.getElementById('pandes'))
+		{
+			document.getElementById('pandes').innerHTML = "Panel";
+		}
 		document.getElementById('activi').innerHTML = "";
 	}
 	if(typeof(c) === "undefined")
@@ -159,6 +162,16 @@ if(!isset($_SESSION['id']))
 	conexion.open("GET",a+parametros,true);
 	conexion.send();
 };
+function pulsar(e,ab,bb,cb)
+{
+	if(e.which == 13)
+	{
+		if(ruta != undefined)
+		{
+			tareas(ab,bb,cb);
+		}
+	}
+}
 </script>
 </head>
 <body onLoad="t;" id="bod">
@@ -179,7 +192,7 @@ include_once('politicas_privacidad.php');
 	</div>
     <div class="col-sm-5">
 		<div class="col-xs-8">
-			<input class="form-control" id="buscar" type="text">
+			<input class="form-control" id="buscar" onkeypress="pulsar(event,'tareas.php?tipo=8','cp','Buscando...');" type="text">
 		</div>
 	    <button type="button" onclick="tareas('tareas.php?tipo=8','cp','Buscando...');" class="btn btn-default btn-sm">
 			<span class="glyphicon glyphicon-search"></span> Buscar 
