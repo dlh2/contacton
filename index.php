@@ -129,7 +129,8 @@ function pulsar(e,ruta)
 				<div class="embed-responsive embed-responsive-16by9">
 					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Cx0lva2Ju2I" frameborder="0" allowfullscreen></iframe>
 				</div>
-				<br/><br/>
+				<br/>
+				<hr/>
 				<div id="opciones">
 				<div class="btn-group btn-group-sm">
 					<button type="button" class="btn btn-primary" onclick="envio('empleado.php');">Registrarse como Usuario</button>
