@@ -42,7 +42,7 @@ else
 
 </head>
 <body style="width:99%;border:0.1em solid;border-color:green;border-radius:0.4em;" align="center">
-<div style="width:100%;height:10%;margin:0 0 0 0;background-color:#84c1a3;color:white;font-size:1.2em;vertical-align:middle;" align="center"><div style="float:right;"><a href="/tablon/tablon.php"><img class="img-responsive" src="/recursos/img/iccontact.png" style="max-width:14%;max-height:100%;padding-top:0.1em;" alt="Volver al inicio"/></a></div><div><h2 style="margin:0 0 0 0;">Editando tu curriculum vitae</h2></div></div>
+<div style="width:100%;height:10%;margin:0 0 0 0;background-color:#84c1a3;color:white;font-size:1.2em;vertical-align:middle;" align="center"><div style="float:right;"><a href="/tablon/"><img class="img-responsive" src="/recursos/img/iccontact.png" style="max-width:14%;max-height:100%;padding-top:0.1em;" alt="Volver al inicio"/></a></div><div><h2 style="margin:0 0 0 0;">Editando tu curriculum vitae</h2></div></div>
 <div style="width:100%;height:100%;" align="center"><form action="/tablon/editor.php" method="POST"><textarea id="curri" name="curri"  rows="10" cols="80"><?php echo $contenido;?></textarea><br/><p>Pulse "Cerrar" para terminar de editar su curriculum.</p><input type="submit" value="Guardar Curriculum"/><input type="button" onclick="cerrar();" value="Cerrar"/></form><h6>Copyright 2015 ContactON</h6></div>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor

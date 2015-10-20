@@ -27,7 +27,7 @@ if(isset($_GET['fase']))
 			else
 			{
 				echo "No tiene ningun mensaje en su Bandeja de entrada.";
-				echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+				echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 			}
 	}
 	if($_GET['fase'] == 2)//bandeja de salida
@@ -51,7 +51,7 @@ if(isset($_GET['fase']))
 			else
 			{
 				echo "No tiene ningun mensaje en su Bandeja de salida.";
-				echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+				echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 			}
 	}
 	if($_GET['fase'] == 3)//Enviar mensajes
@@ -93,7 +93,7 @@ if(isset($_GET['fase']))
 			$conexion->query($sql3);
 			$conexion->query($sql2);
 			$conexion->query($sql1);
-			echo "<div align='center'>Enviado Correctamente <a href='/tablon/tablon.php'> Volver al inicio</a></div>";
+			echo "<div align='center'>Enviado Correctamente <a href='/tablon/'> Volver al inicio</a></div>";
 		}
 		else
 		{
@@ -189,7 +189,7 @@ if($_GET['tipo'] == 3)//el usuario tal te ha enviado un curriculum
 	else
 	{
 		echo "<p>Lo sentimos pero el curriculum que esta intentando ver ahora mismo no esta disponible, puede ser causa de varias razones como que no haya creado ningun curriculum o que se haya dado de baja en la plataforma.</p>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -204,13 +204,13 @@ if($_GET['tipo'] == 4)//Han aceptado tu curriculum
 		echo "<div align='center'><p>Se ha aceptado el curriculum, en breve el usuario recibira la confirmacion y estara esperando que contacten con el, para concretar la cita.</p></div>";
 		$sql="INSERT INTO actividades (id_user,id_desti,fecha,id_tipo_actividad,actividad) VALUES ('".$_REQUEST['id']."','".$_SESSION['id']."','".date("Y/m/d")."','12','Hay novedades en los curriculums que has enviado revisalos por favor.')";
 		$busqueda=$conexion->query($sql);
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		//eres un usuario
 		echo "<div><p>Han aceptado tu solicitud por lo que se pondran en contacto contigo, mediante los mensajes privados de esta plataforma o otras vias de comunicacion que hayas agregado a tu curriculum.</p></div>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -224,13 +224,13 @@ if($_GET['tipo'] == 5)//Han rechazado tu curriculum
 		echo "<div align='center'><p>Has denegado el curriculum.</p></div>";
 		$sql="INSERT INTO actividades (id_user,id_desti,fecha,id_tipo_actividad,actividad) VALUES ('".$_REQUEST['id']."','".$_SESSION['id']."','".date("Y/m/d")."','12','Hay novedades en los curriculums que has enviado revisalos por favor.')";
 		$busqueda=$conexion->query($sql);
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		//eres un usuario
 		echo "<div><p>Se ha denegado tu curriculum, esto ocurre muchas veces porque no ha rellenado bien su curriculum o porque no cumplia los requisitos minimos.</p></div>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -244,13 +244,13 @@ if($_GET['tipo'] == 6)// han guardado tu curriculum para proximas vacantes
 		echo "<div align='center'><p>Has guardado este curriculum para proximos puestos ofertados.</p></div>";
 		$sql="INSERT INTO actividades (id_user,id_desti,fecha,id_tipo_actividad,actividad) VALUES ('".$_REQUEST['id']."','".$_SESSION['id']."','".date("Y/m/d")."','12','Hay novedades en los curriculums que has enviado revisalos por favor.')";
 		$busqueda=$conexion->query($sql);
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		//eres un usuario
 		echo "<div><p>Han guardado tu curriculum para proximos puestos ofertados en tu categoria, esto es buena señal significa que le interesas a esta empresa, ContactON te aconseja que sigas buscando trabajo.</p></div>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -279,7 +279,7 @@ if($_GET['tipo'] == 8)//buscar
 	else
 	{
 		echo '<div class="well well-lg">No se ha podido encontrar las empresas o usuarios relacionados con los terminos "'.$_REQUEST['busqueda'].'",vuelva a buscarlo con otros terminos diferentes.</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -296,12 +296,12 @@ if($_GET['tipo'] == 9)//visualizar mensaje tuyo
 		echo "<h6>"."El mensaje se envio a las:".$fila[1]." al usuario:".$fila2[0]."</h6><hr/>";
 		echo "<h3>Asunto: ".$fila[2]."</h3><br/>";
 		echo "<h4>Ha enviado este mensaje: ".$fila[3]."</h4>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		echo '<div class="well well-lg">No se ha podido visualizar el mensaje que queria ver, intentelo mas tarde por favor.</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -319,12 +319,12 @@ if($_GET['tipo'] == 10)//visualizar mensaje de otro
 		echo "<h6>"."El mensaje se ha recibido a las:".$fila[1]." del usuario:".$fila2[0]."</h6><hr/>";
 		echo "<h3>Asunto: ".$fila[2]."</h3><br/>";
 		echo "<h4>Ha enviado este mensaje: ".$fila[3]."</h4>";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		echo '<div class="well well-lg">No se ha podido visualizar el mensaje que queria ver, intentelo mas tarde por favor.</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 
@@ -359,12 +359,12 @@ if($_GET['tipo'] == 11)//buzon de empresa
 				?><a href="#" onclick="tareas('/tablon/tareas.php?tipo=3&id=<?php echo $fila[2]; ?>','pan','Cargando Curriculum');" class="list-group-item">Curriculum de <?php echo $fila2[0]; echo "&nbsp;".$opcion;?><span class="badge"><?php echo $fila[1]; ?></span></a><?php
 		}
 		echo '</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		echo '<div class="well well-lg">No tiene ningun curriculum en su buzon.</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 if($_GET['tipo'] == 12)//curriculums enviados
@@ -401,12 +401,12 @@ if($_GET['tipo'] == 12)//curriculums enviados
 				?><a href="#" <?php echo $ruta; ?> class="list-group-item">Empresa: <?php echo $fila2[0]; echo "&nbsp;".$opcion; ?><span class="badge"><?php echo $fila[1]; ?></span></a><?php
 		}
 		echo '</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 	else
 	{
 		echo '<div class="well well-lg">No has enviado ningun curriculum.</div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button"  class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Inicio</span></button></a></div>';
 	}
 }
 //el numero 20 no tiene ninguna visualizacion

@@ -30,7 +30,7 @@ else
 		session_start();
 		$_SESSION["id"]=$fila[0];
 		$_SESSION["tipo"]=$fila[1];
-		echo'<ul class="pager"><li><a href="/tablon/tablon.php">Ir a mi Tablon</a></li></ul><script>idUsuario=1;</script>'; 
+		echo'<ul class="pager"><li><a href="/tablon/">Ir a mi Tablon</a></li></ul><script>idUsuario=1;</script>'; 
 	}
 }
 if($contador > 0)

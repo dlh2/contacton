@@ -20,7 +20,7 @@ var idUsuario=<?php if(isset($_SESSION['id'])){echo 1;}else{echo 0;}?>;
 function carga(){
 	if(idUsuario > 0)
 	{
-		window.location ="/tablon/tablon.php";
+		window.location ="/tablon/";
 	}
 } 
 </script>

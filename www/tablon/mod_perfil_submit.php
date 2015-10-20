@@ -18,7 +18,7 @@ if ($resultado->num_rows != 00)
 			</h4>
 			  </div>
 			<div class=\"modal-body\">
-				<ul class=\"pager\"><li id=\"image_upload_result\"></li><li><a href=\"/tablon/tablon.php\">Ir al Tablon.</a></li></ul>
+				<ul class=\"pager\"><li id=\"image_upload_result\"></li><li><a href=\"/tablon/\">Ir al Tablon.</a></li></ul>
 			</div>
 			<div class=\"modal-footer\">
 				<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Ok</button>

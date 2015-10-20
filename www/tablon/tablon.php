@@ -207,7 +207,7 @@ include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
   <div class="jumbotron" style="background-color:#84c1a3;padding-top:20px;padding-bottom:58px;border-radius:0;padding-left:18%;">
     <div class="col-sm-3">
-		<a href="/tablon/tablon.php"><img class="img-responsive" src="/recursos/img/iccontact.png" style="max-width:60%;max-height:60%;" alt="Volver al inicio"/></a> 
+		<a href="/tablon/"><img class="img-responsive" src="/recursos/img/iccontact.png" style="max-width:60%;max-height:60%;" alt="Volver al inicio"/></a> 
 	</div>
     <div class="col-sm-5">
 		<div class="col-xs-8">
@@ -218,7 +218,7 @@ include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
         </button>
 	</div>
     <div class="col-sm-4"> 
-        <a href="/tablon/tablon.php"><button type="button" style="float:left" class="btn btn-default btn-sm">
+        <a href="/tablon/"><button type="button" style="float:left" class="btn btn-default btn-sm">
 			<span class="glyphicon glyphicon-home"></span>
         </button></a>
 		<div class="dropdown" style="float:left;max-width:20%;">

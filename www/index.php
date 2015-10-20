@@ -3,7 +3,7 @@ if(isset($_SESSION['id']))
 {
 	if($_SESSION['id'] > 0)
 	{
-		header('Location: /tablon/tablon.php');
+		header('Location: /tablon/');
 	}
 }
 ?>
@@ -99,7 +99,7 @@ function envio(link)
 function carga(){
 	if(idUsuario > 0)
 	{
-		window.location ="/tablon/tablon.php";
+		window.location ="/tablon/";
 	}
 };
 function pulsar(e,ruta)

@@ -81,7 +81,7 @@ if($contador < 1)
 			$_SESSION["id"]=$fila[0];
 			$_SESSION["tipo"]=$tipo;
 			echo "Se ha registrado correctamente.";
-			echo'<ul class="pager"><li><a href="/tablon/tablon.php">Ir al Tablon de la empresa.</a></li></ul>';
+			echo'<ul class="pager"><li><a href="/tablon/">Ir al Tablon de la empresa.</a></li></ul>';
 			$sql2 ="SELECT id FROM usuarios where correo = '".$correo."'";
 			$resultado3 = $conexion->query($sql2);
 			$fila2=mysqli_fetch_row($resultado3);

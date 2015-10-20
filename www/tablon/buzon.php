@@ -8,7 +8,7 @@ if(!isset($_SESSION['id']))
 if(!isset($_REQUEST['id_empresa']))
 {
 	echo "No existe esta empresa o usuario.";
-	echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+	echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 }
 $envios=0;
 if(isset($_REQUEST['envio']))
@@ -33,7 +33,7 @@ if(isset($_REQUEST['envio']))
 				<div align="center"><button type='button' onclick="tareas('/tablon/tareas.php?tipo=1&fase=5&cor=<?php echo $fila[3]; ?>','cp','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span> MP</button></div>
 				<?php 
 				echo '</div>';
-				echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+				echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 			}
 			else
 			{
@@ -46,14 +46,14 @@ if(isset($_REQUEST['envio']))
 					echo '<div class="panel panel-default" align="center"><div class="panel-heading"><h3>Buzon de la empresa '.$fila[0].'</h3></div><div class="panel-body">';
 					?><img class="img-responsive" src="/recursos/img/buzon.png" alt="Buzon de la empresa"/><p>Puede enviar su curriculum a la empresa pulsando el boton de abajo que pone "Enviar Curriculum".</p><br/><a href="#" onclick="tareas('/tablon/buzon.php?id_empresa=<?php echo $_REQUEST['id_empresa'];?>&envio=1','cp','Enviando Curriculum >>>>>');" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-open-file"></span>Enviar Curriculum</a><?php
 					echo '</div></div>';
-					echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+					echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 				}
 				else
 				{
 					echo '<div class="panel panel-default" align="center"><div class="panel-heading"><h3>Buzon de la empresa '.$fila[0].'</h3></div><div class="panel-body">';
 					?><img class="img-responsive" src="/recursos/img/buzon.png" alt="Buzon de la empresa"/><br/><a href="#" class="btn btn-default btn-lg disabled"><span class="glyphicon glyphicon-open-file"></span>Ya se ha enviado el curriculum</a><p>El curriculum ya se ha enviado a esta empresa anteriormente, estara siendo procesado por la empresa tenga paciencia por favor.</p><?php
 					echo '</div></div>';
-					echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+					echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 				}
 			}
 		}
@@ -67,7 +67,7 @@ if(isset($_REQUEST['envio']))
 				<div align="center"><button type='button' onclick="tareas('/tablon/tareas.php?tipo=1&fase=5&cor=<?php echo $fila[3]; ?>','cp','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span> MP</button></div>
 				<?php
 				echo '</div>';
-				echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+				echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 			}
 			else
 			{
@@ -77,14 +77,14 @@ if(isset($_REQUEST['envio']))
 				<div align="center"><button type='button' onclick="tareas('/tablon/tareas.php?tipo=1&fase=5&cor=<?php echo $fila[3]; ?>','cp','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span> MP</button></div>
 				<?php
 				echo '</div>';
-				echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+				echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 			}
 		}
 	}
 	else
 	{
 		echo "No existe esta empresa o usuario.";
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 	}
 	}
 	else
@@ -100,7 +100,7 @@ if(isset($_REQUEST['envio']))
 		echo date("Y/m/d");
 		?><img class="img-responsive" src="/recursos/img/buzon.png" alt="Buzon de la empresa"/><span class="glyphicon glyphicon-ok"></span><p>Su curriculum se ha enviado correctamente, tenga paciencia hasta que le den una respuesta.</p><br/><?php
 		echo '</div></div>';
-		echo '<div align="center"><a href="/tablon/tablon.php"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
+		echo '<div align="center"><a href="/tablon/"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"> Volver al inicio</span></button></a></div>';
 	}
 mysqli_close($conexion);
 sleep(2);
