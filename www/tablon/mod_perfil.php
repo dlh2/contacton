@@ -1,7 +1,7 @@
   <div class="modal-dialog">
     <!-- Modal content-->
 	<?php 
-		include("conexion.php");
+		include( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
 		$sql = "SELECT nombre, apellido, direccion, fecha, nif, url_foto FROM usuarios where id = '".$_SESSION['id']."' limit 1";
 		$result = $conexion->query($sql);
 		if ($result->num_rows > 0) {
@@ -34,7 +34,7 @@
 								}						
 								else
 								{
-									echo "img/defaultu.jpg";
+									echo "/recursos/img/defaultu.jpg";
 								}?>" class="img-circle" alt="Imagen de perfil" width="150" height="150"/>
 				</label>
 				<input type="file" name="mp_archivo_perfil" id="mp_archivo_perfil"/>
@@ -59,7 +59,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-default" onclick="tareas('mod_perfil_submit.php','div_mod_perfil','Actualizando perfil...');">Enviar</button>
+			<button type="submit" class="btn btn-default" onclick="tareas('/tablon/mod_perfil_submit.php','div_mod_perfil','Actualizando perfil...');">Enviar</button>
 		  </div>
 		</div>
 		<?php mysqli_close($conexion);?>
@@ -67,7 +67,7 @@
   
 <script>
 /*$('#mod_perfil').on('hidden.bs.modal', function () {
-    $("#mod_perfil").load("mod_perfil.php .modal-dialog");
+    $("#mod_perfil").load("/tablon/mod_perfil.php .modal-dialog");
 });
 */
 function readURL(input) {

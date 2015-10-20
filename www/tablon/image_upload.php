@@ -1,5 +1,5 @@
 <?php session_start();
-$target_dir = "avatar/";
+$target_dir = $_SERVER['DOCUMENT_ROOT'] . "/recursos_fuera/avatar/";
 $target_file = $target_dir .$_SESSION['id']. "_". basename($_FILES["mp_archivo_perfil"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -41,8 +41,9 @@ if($_FILES["mp_archivo_perfil"]["name"]!=""){
 	} else {
 		if (move_uploaded_file($_FILES["mp_archivo_perfil"]["tmp_name"], $target_file)) {
 			echo "La imagen se ha subido correctamente.";
-			include("conexion.php");
-			$sql = "UPDATE usuarios SET url_foto='".$target_file."' WHERE id = '".$_SESSION['id']."' ";
+			include( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
+			$url_foto = str_replace($_SERVER['DOCUMENT_ROOT'] , "", $target_file);
+			$sql = "UPDATE usuarios SET url_foto='".$url_foto."' WHERE id = '".$_SESSION['id']."' ";
 			if ($conexion->query($sql) === TRUE) {
 			
 			} else {

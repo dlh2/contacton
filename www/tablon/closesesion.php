@@ -20,7 +20,7 @@ var idUsuario=<?php if(isset($_SESSION['id'])){echo 1;}else{echo 0;}?>;
 function carga(){
 	if(idUsuario > 0)
 	{
-		window.location ="tablon.php";
+		window.location ="/tablon/tablon.php";
 	}
 } 
 </script>
@@ -28,7 +28,7 @@ function carga(){
     <body onLoad="setInterval('carga()',100);">
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
 	<div class="col-sm-12" style="padding-left:0;padding-right:0;">
-		 <a href="/"><img class="img-responsive" src="img/banner.png" alt="Chania"/></a> 
+		 <a href="/"><img class="img-responsive" src="/recursos/img/banner.png" alt="ContactON - Banner"/></a> 
 	</div>
 		
 	<div class="col-sm-12">

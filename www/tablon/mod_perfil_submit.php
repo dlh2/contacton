@@ -5,7 +5,7 @@ $fecha = $_GET["fecha"];
 $nif = $_GET["nif"];
 //validacion completa
 //vamos a comprobar en la base de datos
-include_once("conexion.php");
+include_once( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
 $resultado = $conexion->query("SELECT nombre, apellido, direccion, fecha, nif FROM usuarios where id = '".$_SESSION['id']."' limit 1");
 if ($resultado->num_rows != 00) 
 {
@@ -18,7 +18,7 @@ if ($resultado->num_rows != 00)
 			</h4>
 			  </div>
 			<div class=\"modal-body\">
-				<ul class=\"pager\"><li id=\"image_upload_result\"></li><li><a href=\"tablon.php\">Ir al Tablon.</a></li></ul>
+				<ul class=\"pager\"><li id=\"image_upload_result\"></li><li><a href=\"/tablon/tablon.php\">Ir al Tablon.</a></li></ul>
 			</div>
 			<div class=\"modal-footer\">
 				<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Ok</button>

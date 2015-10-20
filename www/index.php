@@ -3,7 +3,7 @@ if(isset($_SESSION['id']))
 {
 	if($_SESSION['id'] > 0)
 	{
-		header('Location: ./tablon.php');
+		header('Location: /tablon/tablon.php');
 	}
 }
 ?>
@@ -15,7 +15,7 @@ if(isset($_SESSION['id']))
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="/recursos/css/style.css" />
 <link rel="shortcut icon" href="img/favicon.ico"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <script type="text/javascript">
@@ -45,13 +45,13 @@ function envio(link)
 		document.getElementById("contenedor").innerHTML=conexion.responseText;
 		}
 	}
-	if(link == "loginacceso.php")
+	if(link == "/index/loginacceso.php")
 	{
 		var correo = document.getElementById("correo").value;
 		var pass = document.getElementById("pass").value;
 		parametros="?correo="+correo+"&pass="+pass;
 	}
-	else if(link == "registroe.php")
+	else if(link == "/index/registroe.php")
 	{
 		var nombre = document.getElementById("nombre").value;
 		var direccion = document.getElementById("direccion").value;
@@ -68,7 +68,7 @@ function envio(link)
 		}
 		parametros="?correo="+correo+"&pass="+pass+"&pass2="+pass2+"&nombre="+nombre+"&direccion="+direccion+"&politica="+politica;
 	}
-	else if(link == "registrou.php")
+	else if(link == "/index/registrou.php")
 	{
 		var nombre = document.getElementById("nombre").value;
 		var apellido = document.getElementById("apellido").value;
@@ -89,7 +89,7 @@ function envio(link)
 	{
 		parametros="";
 	}
-	if(link == "registrou.php" || link == "registroe.php" || link == "loginacceso.php")
+	if(link == "/index/registrou.php" || link == "/index/registroe.php" || link == "/index/loginacceso.php")
 	{
 		document.getElementById("contenedor").innerHTML=' <br/><div class="progress" style="text-align:center;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:100%">Cargando....Por favor espere</div></div>';
 	}
@@ -99,7 +99,7 @@ function envio(link)
 function carga(){
 	if(idUsuario > 0)
 	{
-		window.location ="tablon.php";
+		window.location ="/tablon/tablon.php";
 	}
 };
 function pulsar(e,ruta)
@@ -117,7 +117,7 @@ function pulsar(e,ruta)
 <body onLoad="setInterval('carga()',1000);>
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
 	<div class="col-sm-12" style="padding-left:0;padding-right:0;">
-		 <a href="/"><img class="img-responsive" src="img/banner.png" alt="Chania"/></a> 
+		 <a href="/"><img class="img-responsive" src="/recursos/img/banner.png" alt="ContactON - Banner"/></a> 
 	</div>
 		
 	<div class="col-sm-12">
@@ -133,10 +133,10 @@ function pulsar(e,ruta)
 				<hr/>
 				<div id="opciones">
 				<div class="btn-group btn-group-sm">
-					<button type="button" class="btn btn-primary" onclick="envio('empleado.php');">Registrarse como Usuario</button>
-					<button type="button" class="btn btn-primary" onclick="envio('empresa.php');">Registrarse como Empresa</button>
+					<button type="button" class="btn btn-primary" onclick="envio('/index/empleado.php');">Registrarse como Usuario</button>
+					<button type="button" class="btn btn-primary" onclick="envio('/index/empresa.php');">Registrarse como Empresa</button>
 				</div><br/><br/>
-				<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('login.php');">Entrar(login)</button>
+				<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('/index/login.php');">Entrar(login)</button>
 			</div>
 			</div>
 		</div>

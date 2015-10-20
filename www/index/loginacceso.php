@@ -16,7 +16,7 @@ if(strlen($pass) == 0)
 	$pass="";
 }
 
-include_once("conexion.php");
+include_once( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
 $resultado = $conexion->query("SELECT id,tipo FROM usuarios where correo = '".$correo."' and password = '".$pass."'");
 if ($resultado->num_rows == 00) 
 {
@@ -30,7 +30,7 @@ else
 		session_start();
 		$_SESSION["id"]=$fila[0];
 		$_SESSION["tipo"]=$fila[1];
-		echo'<ul class="pager"><li><a href="tablon.php">Ir a mi Tablon</a></li></ul><script>idUsuario=1;</script>'; 
+		echo'<ul class="pager"><li><a href="/tablon/tablon.php">Ir a mi Tablon</a></li></ul><script>idUsuario=1;</script>'; 
 	}
 }
 if($contador > 0)
@@ -41,24 +41,24 @@ if($contador > 0){
 echo '<h3>Entrar en mi Perfil:</h3>
 		<form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain">
 		<div class="col-xs-12" style="text-align:center;">
-			<label for="correo">Correo electrónico: </label><input  onkeypress = "pulsar(event,"loginacceso.php");" class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
+			<label for="correo">Correo electrónico: </label><input  onkeypress = "pulsar(event,"/index/loginacceso.php");" class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/>
 		</div>
 		<div class="col-xs-12">
-			<label for="pass">Password:</label><input type="password" name="pass" onkeypress = "pulsar(event,"loginacceso.php");" class="form-control input-lg" id="pass" placeholder="Escoja una contraseña" value='."'$pass'".'/>
+			<label for="pass">Password:</label><input type="password" name="pass" onkeypress = "pulsar(event,"/index/loginacceso.php");" class="form-control input-lg" id="pass" placeholder="Escoja una contraseña" value='."'$pass'".'/>
 		</div>
 		<div class="col-sm-12">		
 		<div class="checkbox">
 			<label><input type="checkbox" name="veri" id="veri" value="veri">No volver a pedir verificacion.</label>
 		</div>	
-		<button type="button" class="btn btn-default" onclick="envio('."'loginacceso.php'".');">Conectarse</button><br/><br/>
+		<button type="button" class="btn btn-default" onclick="envio('."'/index/loginacceso.php'".');">Conectarse</button><br/><br/>
 		</div>
 		</form>
 		<div class="btn-group btn-group-sm">
-			<button type="button" class="btn btn-primary" onclick="envio('."'empleado.php'".');">Registrarse como Usuario</button>
-			<button type="button" class="btn btn-primary" onclick="envio('."'empresa.php'".');">Registrarse como Empresa</button>
+			<button type="button" class="btn btn-primary" onclick="envio('."'/index/empleado.php'".');">Registrarse como Usuario</button>
+			<button type="button" class="btn btn-primary" onclick="envio('."'/index/empresa.php'".');">Registrarse como Empresa</button>
 		</div>
 		<br/><br/>
-		<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'login.php'".');">Entrar(login)</button>';
+		<button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'/index/login.php'".');">Entrar(login)</button>';
 		}
 	mysqli_close($conexion);
 	sleep(2);

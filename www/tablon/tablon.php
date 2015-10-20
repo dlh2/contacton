@@ -1,7 +1,7 @@
 ﻿<?php session_start();
 if(!isset($_SESSION['id']))
 {
-	header('Location: ./index.php');
+	header('Location: /index.php');
 }
  ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ if(!isset($_SESSION['id']))
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link rel="icon" href="img/favicon.ico"/>
+  <link rel="icon" href="/recursos/img/favicon.ico"/>
   <script></script>
   <script type="text/javascript">
 	var t;
@@ -62,7 +62,7 @@ if(!isset($_SESSION['id']))
 	}
 	parametros="?numero="+numero;
 	document.getElementById("carga").innerHTML=' <br/><div class="progress" style="width:100%;text-align:center;margin:5px;padding:0;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="50" style="width:100%;background-color:orange;"> Actualizando </div></div>';
-	conexion.open("GET","reload.php"+parametros,true);
+	conexion.open("GET","/tablon/reload.php"+parametros,true);
 	conexion.send();
 };
 	function tareas(a,b,c)
@@ -113,17 +113,17 @@ if(!isset($_SESSION['id']))
 			}
 		}
 	}
-	if(a == 'tareas.php?tipo=8')
+	if(a == '/tablon/tareas.php?tipo=8')
 	{
 		parametros="&busqueda="+document.getElementById('buscar').value;
 	}
-	else if(a == 'tareas.php?tipo=1&fase=4')
+	else if(a == '/tablon/tareas.php?tipo=1&fase=4')
 	{
 		parametros="&mensaje="+document.getElementById('mail').value;
 		parametros=parametros+"&asunto="+document.getElementById('asunto').value;
 		parametros=parametros+"&des="+document.getElementById('des').value;
 	}
-	else if(a == 'contactanos_submit.php')
+	else if(a == '/tablon/contactanos_submit.php')
 	{
 		parametros="?nombre="+document.getElementById('nombre').value;
 		parametros=parametros+"&apellidos="+document.getElementById('apellidos').value;
@@ -132,7 +132,7 @@ if(!isset($_SESSION['id']))
 		parametros=parametros+"&id_motivo="+
 		document.getElementsByTagName("option")[n_motiv].value;parametros=parametros+"&num_telf="+document.getElementById('num_telf').value;parametros=parametros+"&mensaje="+document.getElementById('mensaje').value;
 	}
-	else if(a == 'mod_perfil_submit.php')
+	else if(a == '/tablon/mod_perfil_submit.php')
 	{
 		var avatar = new FormData();
         var file = document.getElementById('mp_archivo_perfil').files[0];
@@ -153,7 +153,7 @@ if(!isset($_SESSION['id']))
 	{
 		document.getElementById('cp').innerHTML=' <br/><div class="progress" style="width:100%;text-align:center;margin:0 0 0 0;padding:0 0 0 0;"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="50" style="width:100%;background-color:gray;">'+mensajeload+'</div></div>';
 	}
-	if(a == 'mod_perfil_submit.php'){
+	if(a == '/tablon/mod_perfil_submit.php'){
 		var conexion_i;
 		if(window.XMLHttpRequest)
 		{
@@ -175,7 +175,7 @@ if(!isset($_SESSION['id']))
 				}
 			}
 		}
-		conexion_i.open("POST","image_upload.php",true);
+		conexion_i.open("POST","/tablon/image_upload.php",true);
 		conexion_i.send(avatar);
 	}
 	conexion.open("GET",a+parametros,true);
@@ -185,7 +185,7 @@ function pulsar(e,ab,bb,cb)
 {
 	if(e.which == 13)
 	{
-		if(ab == 'tareas.php?tipo=8')
+		if(ab == '/tablon/tareas.php?tipo=8')
 		{
 			tareas(ab,bb,cb);
 		}
@@ -195,30 +195,30 @@ function pulsar(e,ab,bb,cb)
 </head>
 <body onLoad="t;" id="bod">
 <div id="mod_perfil" class="modal fade" role="dialog">
-<?php include_once('mod_perfil.php'); ?>
+<?php include_once( $_SERVER['DOCUMENT_ROOT'] . '/tablon/mod_perfil.php'); ?>
 </div>
 <?php
-include_once('politicas_privacidad.php');
+include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
 ?>
 <div id="contactanos" class="modal fade" role="dialog">
-<?php include_once('contactanos.php'); ?>
+<?php include_once( $_SERVER['DOCUMENT_ROOT'] . '/tablon/contactanos.php'); ?>
 </div>
-<?php include("conexion.php");?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");?>
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
   <div class="jumbotron" style="background-color:#84c1a3;padding-top:20px;padding-bottom:58px;border-radius:0;padding-left:18%;">
     <div class="col-sm-3">
-		<a href="tablon.php"><img class="img-responsive" src="img/iccontact.png" style="max-width:60%;max-height:60%;" alt="Volver al inicio"/></a> 
+		<a href="/tablon/tablon.php"><img class="img-responsive" src="/recursos/img/iccontact.png" style="max-width:60%;max-height:60%;" alt="Volver al inicio"/></a> 
 	</div>
     <div class="col-sm-5">
 		<div class="col-xs-8">
-			<input class="form-control" id="buscar" onkeypress="pulsar(event,'tareas.php?tipo=8','cp','Buscando...');" type="text">
+			<input class="form-control" id="buscar" onkeypress="pulsar(event,'/tablon/tareas.php?tipo=8','cp','Buscando...');" type="text">
 		</div>
-	    <button type="button" onclick="tareas('tareas.php?tipo=8','cp','Buscando...');" class="btn btn-default btn-sm">
+	    <button type="button" onclick="tareas('/tablon/tareas.php?tipo=8','cp','Buscando...');" class="btn btn-default btn-sm">
 			<span class="glyphicon glyphicon-search"></span> Buscar 
         </button>
 	</div>
     <div class="col-sm-4"> 
-        <a href="tablon.php"><button type="button" style="float:left" class="btn btn-default btn-sm">
+        <a href="/tablon/tablon.php"><button type="button" style="float:left" class="btn btn-default btn-sm">
 			<span class="glyphicon glyphicon-home"></span>
         </button></a>
 		<div class="dropdown" style="float:left;max-width:20%;">
@@ -232,7 +232,7 @@ include_once('politicas_privacidad.php');
 
 			</ul>
 		</div>
-		<a href="closesesion.php"><button type="button" class="btn btn-default btn-sm">
+		<a href="/tablon/closesesion.php"><button type="button" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-off"></span>
         </button></a>
 	</div>
@@ -262,7 +262,7 @@ include_once('politicas_privacidad.php');
 								}						
 								else
 								{
-									$imagen="img/defaultu.jpg";
+									$imagen="/recursos/img/defaultu.jpg";
 								}
 								
 								if($fila[4] == "")
@@ -276,8 +276,8 @@ include_once('politicas_privacidad.php');
 								echo '<img src="'.$imagen.'" class="img-circle" alt="Imagen de perfil" width="150" height="150"/>';
 								echo "<br/>Informacion:<br/>Nombre:".$fila[0]."<br/>Direccion:".$fila[1]."<br/>Correo:".$fila[2]."<br/>Nif:".$nif."<br/><br/>";	
 								?>
-								<button type='button' onclick="tareas('tareas.php?tipo=11','pan','Cargando Buzon de Currriculums');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-inbox'></span> Abrir Buzon</button>
-								<button type='button' onclick="tareas('tareas.php?tipo=1','pan','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span>MP</button>
+								<button type='button' onclick="tareas('/tablon/tareas.php?tipo=11','pan','Cargando Buzon de Currriculums');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-inbox'></span> Abrir Buzon</button>
+								<button type='button' onclick="tareas('/tablon/tareas.php?tipo=1','pan','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span>MP</button>
 								<?php
 							}
 						}
@@ -287,7 +287,7 @@ include_once('politicas_privacidad.php');
 							$busqueda=$conexion->query($sql);
 							if ($busqueda->num_rows == 00) 
 							{	
-								header('Location: ./index.php');
+								header('Location: /index.php');
 								echo "usted no esta logeado";
 							}
 							else
@@ -299,13 +299,13 @@ include_once('politicas_privacidad.php');
 								}						
 								else
 								{
-									$imagen="img/defaultu.jpg";
+									$imagen="/recursos/img/defaultu.jpg";
 								}
 								echo '<img src="'.$imagen.'" class="img-circle" alt="Imagen de perfil" width="150" height="150"/>';
 								echo "<br/>Informacion:<br/>Nombre:".$fila[0]."<br/>Apellidos:".$fila[1]."<br/>Correo:".$fila[2]."<br/><br/>";
-								?><a target="_blank" href="editor.php"><button type="button" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-list-alt'></span>Curriculum</button></a>&nbsp;<button type='button' onclick="tareas('tareas.php?tipo=1','pan','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span>MP</button><br/><br/>
+								?><a target="_blank" href="/tablon/editor.php"><button type="button" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-list-alt'></span>Curriculum</button></a>&nbsp;<button type='button' onclick="tareas('/tablon/tareas.php?tipo=1','pan','Mensajeria cargando...');" class='btn btn-default btn-sm'><span class='glyphicon glyphicon-envelope'></span>MP</button><br/><br/>
 								
-								<button type="button" onclick="tareas('tareas.php?tipo=12','pan','Cargando estado de curriculums enviados...');" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-share"></span>Estado de Curriculums</button>
+								<button type="button" onclick="tareas('/tablon/tareas.php?tipo=12','pan','Cargando estado de curriculums enviados...');" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-share"></span>Estado de Curriculums</button>
 								<?php
 							}
 						}
@@ -335,7 +335,7 @@ include_once('politicas_privacidad.php');
 									}
 									else
 									{
-										?><a href="#Mostrar" onclick="tareas('tareas.php?tipo=<?php echo $fila[1]; ?>&id=<?php echo $fila[5]; ?>','pan','Mostrando tarea..');" class="list-group-item"><h4 class="list-group-item-heading"><span class="label label-default">Nuevo</span><?php echo $fila[2]; ?></h4><p class="list-group-item-text"><?php echo $fila[3]; ?></p></a><?php
+										?><a href="#Mostrar" onclick="tareas('/tablon/tareas.php?tipo=<?php echo $fila[1]; ?>&id=<?php echo $fila[5]; ?>','pan','Mostrando tarea..');" class="list-group-item"><h4 class="list-group-item-heading"><span class="label label-default">Nuevo</span><?php echo $fila[2]; ?></h4><p class="list-group-item-text"><?php echo $fila[3]; ?></p></a><?php
 									}
 								}
 								else
@@ -346,7 +346,7 @@ include_once('politicas_privacidad.php');
 									}
 									else
 									{
-										?><a href="#Mostrar" onclick="tareas('tareas.php?tipo=<?php echo $fila[1]; ?>&id=<?php echo $fila[5]; ?>','pan','Mostrando tarea..');" class="list-group-item"><h4 class="list-group-item-heading"><?php echo $fila[2]; ?></h4><p class="list-group-item-text"><?php echo $fila[3]; ?><span class="label label-info">Visto</span></p></a><?php
+										?><a href="#Mostrar" onclick="tareas('/tablon/tareas.php?tipo=<?php echo $fila[1]; ?>&id=<?php echo $fila[5]; ?>','pan','Mostrando tarea..');" class="list-group-item"><h4 class="list-group-item-heading"><?php echo $fila[2]; ?></h4><p class="list-group-item-text"><?php echo $fila[3]; ?><span class="label label-info">Visto</span></p></a><?php
 									}
 								}
 						}

@@ -8,7 +8,7 @@ $num_telf = $_GET["num_telf"];
 $mensaje = $_GET["mensaje"];
 //validacion completa
 //vamos a comprobar en la base de datos
-include_once("conexion.php");
+include_once( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
 	$sql = "INSERT INTO atencion_cliente (nombre,apellidos,email,id_motivo,telefono,mensaje) VALUES ('".$nombre."','".$apellidos."','".$email."',".$id_motivo.",'".$num_telf."','".$mensaje."')";
 		if ($conexion->query($sql) === TRUE) {
 			echo "<div class=\"modal-header\">
@@ -18,7 +18,7 @@ include_once("conexion.php");
 			</h4>
 			  </div>
 			<div class=\"modal-body\">
-				<ul class=\"pager\"><li><a href=\"tablon.php\">Ir al Tablon.</a></li></ul>
+				<ul class=\"pager\"><li><a href=\"/tablon/tablon.php\">Ir al Tablon.</a></li></ul>
 			</div>
 			<div class=\"modal-footer\">
 				<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Ok</button>

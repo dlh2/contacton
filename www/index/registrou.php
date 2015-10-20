@@ -62,7 +62,7 @@ if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
 }
 //validacion completa
 //vamos a comprobar en la base de datos
-include_once("conexion.php");
+include_once( $_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");
 $resultado = $conexion->query("SELECT id,tipo FROM usuarios where correo = '".$correo."'");
 if ($resultado->num_rows != 00) 
 {
@@ -81,7 +81,7 @@ if($contador < 1)
 			$_SESSION["id"]=$fila[0];
 			$_SESSION["tipo"]=$tipo;
 			echo "Se ha registrado correctamente.";
-			echo'<ul class="pager"><li><a href="tablon.php">Ir a mi Tablon</a></li></ul>';
+			echo'<ul class="pager"><li><a href="/tablon/tablon.php">Ir a mi Tablon</a></li></ul>';
 			$sql2 ="SELECT id FROM usuarios where correo = '".$correo."'";
 			$resultado3 = $conexion->query($sql2);
 			$fila2=mysqli_fetch_row($resultado3);
@@ -96,7 +96,7 @@ if($contador > 0)
 }
 if($contador > 0)
 	{
-	echo '<h3>Formulario de registro de Usuario:</h3> <form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain"> <div class="col-xs-6"><label for="nombre">Nombre:</label><input type="text" onkeypress = "pulsar(event,"registrou.php");" name="nombre" class="form-control input-lg" id="nombre" placeholder="ejemplo:Juan Sanchez" value='."'$nombre'".'/></div><div class="col-xs-6"><label for="apellido">Apellidos:</label><input type="text" onkeypress = "pulsar(event,"registrou.php");" name="apellido" class="form-control input-lg" id="apellido" placeholder="Ejemplo:martinez sevilla" value='."'$apellido'".'/></div><div class="col-xs-6"><label for="pass">Password:</label><input onkeypress = "pulsar(event,"registrou.php");" type="password" name="pass" class="form-control input-lg" id="pass" placeholder="Escoja una Password" value='."'$pass'".'/></div><div class="col-xs-6"><label for="pass2">Repetir Password: </label><input onkeypress = "pulsar(event,"registrou.php");" id="pass2" type="password" name="pass2" class="form-control input-lg" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/></div><div class="col-xs-6"><label for="correo">Correo electronico: </label><input onkeypress = "pulsar(event,"registrou.php");"  class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/></div><br/><br/><br/><br/><br/><div class="checkbox"><label for="politica"><input type="checkbox" name="politica" id="politica" value="yes" '.$check.'>Pulse para aceptar las <a href="#">politicas de uso</a>.</label></div><button type="button" class="btn btn-default" onclick="envio('."'registrou.php'".');">Enviar</button><br/><br/></form><br/><button type="button" class="btn btn-primary" onclick="envio('."'empresa.php'".');">Registrarse como Empresa</button><br/><br/><button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'login.php'".');">Entrar(login)</button>';
+	echo '<h3>Formulario de registro de Usuario:</h3> <form class="form-horizontal" role="form" action="/" method="post" enctype="text/plain"> <div class="col-xs-6"><label for="nombre">Nombre:</label><input type="text" onkeypress = "pulsar(event,"/index/registrou.php");" name="nombre" class="form-control input-lg" id="nombre" placeholder="ejemplo:Juan Sanchez" value='."'$nombre'".'/></div><div class="col-xs-6"><label for="apellido">Apellidos:</label><input type="text" onkeypress = "pulsar(event,"/index/registrou.php");" name="apellido" class="form-control input-lg" id="apellido" placeholder="Ejemplo:martinez sevilla" value='."'$apellido'".'/></div><div class="col-xs-6"><label for="pass">Password:</label><input onkeypress = "pulsar(event,"/index/registrou.php");" type="password" name="pass" class="form-control input-lg" id="pass" placeholder="Escoja una Password" value='."'$pass'".'/></div><div class="col-xs-6"><label for="pass2">Repetir Password: </label><input onkeypress = "pulsar(event,"/index/registrou.php");" id="pass2" type="password" name="pass2" class="form-control input-lg" placeholder="Vuelve a introducir tu Password" value='."'$pass2'".'/></div><div class="col-xs-6"><label for="correo">Correo electronico: </label><input onkeypress = "pulsar(event,"/index/registrou.php");"  class="form-control input-lg" id="correo" type="email" name="correo" placeholder="ejemplo@ejemplo.com" value='."'$correo'".'/></div><br/><br/><br/><br/><br/><div class="checkbox"><label for="politica"><input type="checkbox" name="politica" id="politica" value="yes" '.$check.'>Pulse para aceptar las <a href="#">politicas de uso</a>.</label></div><button type="button" class="btn btn-default" onclick="envio('."'/index/registrou.php'".');">Enviar</button><br/><br/></form><br/><button type="button" class="btn btn-primary" onclick="envio('."'/index/empresa.php'".');">Registrarse como Empresa</button><br/><br/><button type="button" class="btn btn-primary btn-sm" id="botonusuario" onclick="envio('."'/index/login.php'".');">Entrar(login)</button>';
 	}
 	mysqli_close($conexion);
 	sleep(4);

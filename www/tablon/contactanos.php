@@ -38,12 +38,12 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-default" onclick="tareas('contactanos_submit.php','div_contactanos','Actualizando perfil...');">Enviar</button>
+			<button type="submit" class="btn btn-default" onclick="tareas('/tablon/contactanos_submit.php','div_contactanos','Actualizando perfil...');">Enviar</button>
 		  </div>
 		</div>
   </div>
 <script>
 $('#contactanos').on('hidden.bs.modal', function () {
-    $("#contactanos").load("contactanos.php .modal-dialog");
+    $("#contactanos").load("/tablon/contactanos.php .modal-dialog");
 });
 </script>
