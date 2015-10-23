@@ -7,5 +7,6 @@ User-Agent: Googlebot
 Allow: /sitemaps/principal.txt
 Allow: /sitemaps/pp.php
 Allow: /recursos/perfil.php
+Allow: /tablon/tablon.php
 
 

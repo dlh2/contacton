@@ -3,11 +3,25 @@ if(!isset($_SESSION['id']))
 {
 	header('Location: /index.php');
 }
- ?>
+?>
+<?php include($_SERVER['DOCUMENT_ROOT']."/recursos/bd/conexion.php");?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Tablon</title>
+  <title>Tablon de <?php
+	$sql56="SELECT nombre, apellido FROM usuarios where id = '".$_SESSION['id']."' limit 1";
+	$busqueda56=$conexion->query($sql56);
+	if ($busqueda56->num_rows == 00) 
+	{	
+		echo " No disponible";
+	} 
+	else
+	{
+		$fila56=mysqli_fetch_row($busqueda56);
+		echo " ".$fila56[0]." ".$fila56[1];
+	}
+	?></title>
+  <meta name="description" content="En esta zona podra ver todas sus notificaciones y realizar la mayoria de sus acciones en la red social de empleo ContactON."/>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
@@ -203,7 +217,6 @@ include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
 <div id="contactanos" class="modal fade" role="dialog">
 <?php include_once( $_SERVER['DOCUMENT_ROOT'] . '/tablon/contactanos.php'); ?>
 </div>
-<?php include($_SERVER['DOCUMENT_ROOT'] . "/recursos/bd/conexion.php");?>
 <div class="container-fluid" style="padding-left:0;padding-right:0;">
   <div class="jumbotron" style="background-color:#84c1a3;padding-top:20px;padding-bottom:58px;border-radius:0;padding-left:18%;">
     <div class="col-sm-3">
@@ -245,13 +258,14 @@ include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
 			<div class="panel-heading">Informacion del perfil</div>
 				<div class="panel-body">
 					<?php
+						include($_SERVER['DOCUMENT_ROOT']."/recursos/bd/conexion.php");
 						if($_SESSION['tipo'] == "empresa")
 						{
 							$sql="SELECT nombre, direccion, correo, url_foto, nif FROM usuarios where id = '".$_SESSION['id']."' limit 1";
 							$busqueda=$conexion->query($sql);
 							if ($busqueda->num_rows == 00) 
 							{	
-							echo "usted no esta logeado";
+								echo "usted no esta logeado codigo de error 1204";
 							}
 							else
 							{
@@ -287,8 +301,7 @@ include_once( $_SERVER['DOCUMENT_ROOT'] . '/recursos/politicas_privacidad.php');
 							$busqueda=$conexion->query($sql);
 							if ($busqueda->num_rows == 00) 
 							{	
-								header('Location: /index.php');
-								echo "usted no esta logeado";
+								echo "usted no esta logeado codigo de error 1205";
 							}
 							else
 							{
