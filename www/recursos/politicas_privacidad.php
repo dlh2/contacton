@@ -1,9 +1,9 @@
-<div id="politicas_privacidad" class="modal fade" role="dialog">  <div class="modal-dialog modal-lg">    <!-- Modal content-->    <div class="modal-content">      <div class="modal-header">        <button type="button" class="close" data-dismiss="modal">×</button>        <h4 class="modal-title">          Políticas de Privacidad        </h4>      </div>      <div class="modal-body">        <strong>ContactON</strong>
+<div id="politicas_privacidad" class="modal fade" role="dialog">  <div class="modal-dialog modal-lg">    <!-- Modal content-->    <div class="modal-content">      <div class="modal-header">        <button type="button" class="close" data-dismiss="modal">×</button>        <h4 class="modal-title">          Políticas de Privacidad        </h4>      </div>      <div class="modal-body">        <strong>ContactON</strong>
 			<div class="well well-sm text-justify">
 				<strong>El portal de Empleo ContactON</strong> es un servicio interactivo de ContactON, S.L. sociedad de nacionalidad española.
 			<br/><br/>
 				Esta sociedad es titular del Portal de Empleo ContactON, y de su Base de Datos inscrita en la Agencia de Protección de Datos con el Código [Pendiente], y se ajusta a la normativa establecida en la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de  Carácter Personal (BOE de 14/12/1999).<strong>ContactON es propiedad de ContactON, S.L.</strong> La Sociedad ContactON, S.L. <strong>es propietaria de la Web</strong> <a href="http://www.contacton.tk">Contacton.tk</a>.
-			</div>        <strong>Calidad de los datos</strong>			<div class="well well-sm text-justify">				Los datos de carácter personal que se solicitan a los usuarios usuarios que voluntariamente desean introducir su currículum vitae en la base de datos: nombre, dirección, teléfono(s) de contacto, e-mail, nivel de formación, profesión, son los adecuados y pertinentes y estrictamente necesarios para el fin que se les da, que es la posibilidad de contacto entre las empresas oferentes de empleo y los profesionales demandantes del mismo a través del servicio informático que posibilita <strong>ContactON</strong>.			<br/><br/>				A las empresas usuarias que voluntariamente se dan de alta en <strong>ContactON</strong> para insertar y gestionar sus ofertas de trabajo, se les solicitan datos tales como nombre, dirección, teléfonos y e-mail de contacto, NIF, y página web y que son los adecuados y pertinentes y estrictamente necesarios para el fin que se les da. Se entiende como empresa usuaria toda persona jurídica, sociedad mercantil, o todo profesional autónomo, que ofrece empleo.			<br/><br/>
+			</div>        <strong>Calidad de los datos</strong>			<div class="well well-sm text-justify">				Los datos de carácter personal que se solicitan a los usuarios usuarios que voluntariamente desean introducir su currículum vitae en la base de datos: nombre, dirección, teléfono(s) de contacto, e-mail, nivel de formación, profesión, son los adecuados y pertinentes y estrictamente necesarios para el fin que se les da, que es la posibilidad de contacto entre las empresas oferentes de empleo y los profesionales demandantes del mismo a través del servicio informático que posibilita <strong>ContactON</strong>.			<br/><br/>				A las empresas usuarias que voluntariamente se dan de alta en <strong>ContactON</strong> para insertar y gestionar sus ofertas de trabajo, se les solicitan datos tales como nombre, dirección, teléfonos y e-mail de contacto, NIF, y página web y que son los adecuados y pertinentes y estrictamente necesarios para el fin que se les da. Se entiende como empresa usuaria toda persona jurídica, sociedad mercantil, o todo profesional autónomo, que ofrece empleo.			<br/><br/>
 				Los usuarios (empresas y usuarios), al pulsar en el formulario de Alta el botón "ALTA EMPRESA/ALTA USUARIO", dan <b>su expreso e inequívoco consentimiento al tratamiento de los mismos</b>, así como, en su caso, a la cesión de los mismos a terceros para el cumplimiento del servicio, dentro del marco establecido por la legislación vigente.
 			<br/><br/>
 				La base de datos en que se almacenan es propiedad de <b>ContactON</b>, que garantiza las medidas técnicas y organizativas necesarias para la seguridad e integridad de los datos personales que contiene, de acuerdo con la legislación vigente, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados, y los riesgos a los que están expuestos, ya provengan de la acción humana o del medio físico o natural.
@@ -14,7 +14,7 @@
 			<br/><br/>
 				Si se verificase de cualquier forma que los datos introducidos son inexactos o incompletos, serán cancelados.
 			</div>
-			        <strong>Derecho de Información</strong>
+			        <strong>Derecho de Información</strong>
 			<div class="well well-sm text-justify">
 				Los usuarios que voluntariamente acceden a la inserción de sus datos personales en la Base de datos de <b>ContactON</b>, aceptan conocer de modo expreso, preciso e inequívoco:
 				<ul>
@@ -28,11 +28,11 @@
 		<strong>Consentimiento del interesado</strong>	
 			<div class="well well-sm text-justify">
 				Por lo anteriormente expuesto respecto al carácter, finalidad y voluntariedad del acceso a los servicios de <b>ContactON</b>, se entiende que el usuario, por el hecho de introducir sus datos, y confirmarlos a través de la determinación de su e-mail y password, está dando su consentimiento expreso e inequívoco al tratamiento de sus datos dentro del sistema del portal de empleo <b>ContactON</b>, al pulsar el botón "ALTA USUARIO". En todo momento tiene la posibilidad de revocar este consentimiento, eliminando sus datos de manera directa e inmediata del sistema.  
-			</div>        <strong>Acceso a ContactON desde dispositivos móviles</strong>
+			</div>        <strong>Acceso a ContactON desde dispositivos móviles</strong>
 			<div class="well well-sm text-justify">
 				Los usuarios (empresas y usuarios) pueden acceder a los servicios de <b>ContactON</b> desde su ordenador personal, y, también, desde dispositivos móviles: teléfonos móviles, o dispositivos como iPhone, iPad, iPod Touch, y en otros Smartphone bajo la aplicación Android. Desde estos dispositivos podrán utilizar los mismos servicios, una vez autentificados en el sistema a través de sus claves de acceso personales. <b>ContactON</b> asegura, con los medios que ofrece la tecnología, la confidencialidad de todas las comunicaciones y la voluntariedad de todas las gestiones realizadas desde esos dispositivos.  
 			</div>
-        <strong>Control de lectura de los datos personales</strong>
+        <strong>Control de lectura de los datos personales</strong>
 			<div class="well well-sm text-justify">
 				Una vez que el usuario ha enviado su currículo a una oferta, y éste ha sido leído por la Empresa, recibe de forma automática, en la dirección de correo electrónico que ha designado, un mensaje de confirmación de que sus datos han sido leídos y a la hora en que este hecho se ha producido. 
 			</div>
@@ -72,7 +72,7 @@
 				<li><a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" target="_blank"><b>FireFox 3.5</b> y superior; Navegación Privada</a></li>
 				<li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank"><b>Google Chrome 10</b> y superior; Incógnito</a></li>
 				</ul> 
-			</div>		<strong>Derecho de oposición, corrección y actualización de datos </strong>
+			</div>		<strong>Derecho de oposición, corrección y actualización de datos </strong>
 			<div class="well well-sm text-justify">
 				El usuario, como queda expresado, tiene pleno acceso a estos derechos, amparado en la propia configuración del portal <b>ContactON</b>, que le facilita su ejercicio de forma automática y personal. Para cualquier aclaración o discrepancia tiene acceso a los técnicos y servicios jurídicos de <b>ContactON</b>, que le facilitarán cuanta información resulte oportuna a estos efectos. 
 				<br/><br/>
@@ -81,4 +81,4 @@
 				ContactON sitio web de ContactON S.L.
 				<br/>
 				Universidad de Alicante, Calle Aeroplano, s/n. 03660 San Vicente del Raspeig, Alicante, España.
-			</div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-default" data-dismiss=        "modal">Cerrar</button>      </div>    </div>  </div></div>
+			</div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-default" data-dismiss=        "modal">Cerrar</button>      </div>    </div>  </div></div>

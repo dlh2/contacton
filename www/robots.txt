@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /tablon/
+Disallow: /index/
+Disallow: /recursos/
+Disallow: /sitemaps/
+User-Agent: Googlebot
+Allow: /sitemaps/principal.txt
+Allow: /sitemaps/pp.php
+Allow: /recursos/perfil.php
+
+
